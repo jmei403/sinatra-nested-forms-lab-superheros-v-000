@@ -8,20 +8,20 @@ class App < Sinatra::Base
       erb :'../views/super_hero'
     end
 
-    get '/teams' do
-      erb :'../views/super_hero'
-    end
-
-    # post '/teams' do
-    #   @team = Team.new(params[:team])
-    #
-    #   params[:team][:members].each do |member_info|
-    #     Member.new(member_info)
-    #   end
-    #
-    #   @members = Member.all
-    #
-    #   erb :'../views/team'
+    # get '/teams' do
+    #   erb :'../views/super_hero'
     # end
+
+    post '/teams' do
+      @team = Team.new(params[:team])
+
+      params[:team][:members].each do |member_info|
+        Member.new(member_info)
+      end
+
+      @members = Member.all
+
+      erb :'../views/team'
+    end
 
 end
