@@ -8,6 +8,10 @@ class App < Sinatra::Base
       erb :'../views/super_hero'
     end
 
+    get '/new' do
+      erb :'../views/super_hero'
+    end
+
     post '/teams' do
       @team = Team.new(params[:team])
 
@@ -16,7 +20,7 @@ class App < Sinatra::Base
       end
 
       @members = Member.all
-      
+
       erb :'../views/team'
     end
 
