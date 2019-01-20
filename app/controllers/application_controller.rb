@@ -8,10 +8,6 @@ class App < Sinatra::Base
       erb :'../views/super_hero'
     end
 
-    # get '/teams' do
-    #   erb :'../views/super_hero'
-    # end
-
     post '/teams' do
       @team = Team.new(params[:team])
 
